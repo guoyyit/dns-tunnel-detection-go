@@ -1,0 +1,3 @@
+# runtime state (WAL + snapshots)
+/var/
+*.log

@@ -1,0 +1,52 @@
+{
+  "window": {
+    "size": 600000000000,
+    "slide": 30000000000,
+    "fire_score": 6.0,
+    "fire_buckets": 6,
+    "max_suspect_score": 8,
+    "lateness_grace": 120000000000
+  },
+  "scoring": {
+    "w_name_len": 1.5,
+    "w_entropy": 1.2,
+    "w_digit_ratio": 1.0,
+    "w_frequency": 1.5,
+    "w_interval": 1.0,
+    "w_nxdomain": 1.0,
+    "w_no_response": 0.5,
+    "w_long_label": 1.0,
+    "name_len_abs_threshold": 60,
+    "entropy_abs_threshold": 4.2,
+    "freq_qps_threshold": 8.0
+  },
+  "baseline": {
+    "min_samples": 20,
+    "ewma_alpha": 0.1,
+    "drift_z_factor": 2.5,
+    "drift_cap": 3.0,
+    "heartbeat_max_qps": 0.2,
+    "max_baseline_keys": 100000
+  },
+  "cooldown": {
+    "duration": 900000000000,
+    "escalate_on_severity_change": true,
+    "max_active_keys": 50000
+  },
+  "whitelist": {
+    "suffixes": ["corp.example", "updates.example.org"],
+    "regexps": ["^hb-[0-9]+\\.heartbeat\\.internal$"],
+    "clients": ["127.0.0.1"]
+  },
+  "ingest": {
+    "shard_count": 16,
+    "queue_size": 4096,
+    "max_tracked": 200000
+  },
+  "persistence": {
+    "dir": "./var/dtsd-state",
+    "snapshot_every_events": 10000,
+    "wal_max_bytes": 67108864,
+    "flush_interval": 1000000000
+  }
+}
